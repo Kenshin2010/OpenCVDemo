@@ -91,13 +91,12 @@ public class StartActivity extends Activity {
                     ActivityCompat.requestPermissions(StartActivity.this, PERMISSIONS, MULTIPLE_PERMISSIONS);
                 } else {
                     CommonUtils.cleanFolder();
-                    startActivity(LoginActivity.class,null, AnimationType.ANIM_RIGHT_TO_LEFT);
+                    startActivity(RecognizeTextActivity.class,null, AnimationType.ANIM_RIGHT_TO_LEFT);
                 }
             }
         });
 
     }
-
 
 
     public static boolean hasPermissions(Context context, String... permissions) {
@@ -118,7 +117,7 @@ public class StartActivity extends Activity {
             case MULTIPLE_PERMISSIONS: {
                 if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
                     // permissions granted.
-                    startActivity(LoginActivity.class,null, AnimationType.ANIM_LEFT_TO_RIGHT);
+                    startActivity(RecognizeTextActivity.class,null, AnimationType.ANIM_LEFT_TO_RIGHT);
                 } else {
                     Toast.makeText(this, "Please grant permission for application !!!", Toast.LENGTH_SHORT).show();
 //                    this.finish();
@@ -131,6 +130,7 @@ public class StartActivity extends Activity {
 
     public void startActivity(Class<?> cls, Bundle bundle, int[] anim) {
         Intent intent = new Intent(this, cls);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         super.startActivity(intent);
         overridePendingTransition(anim[0], anim[1]);
     }

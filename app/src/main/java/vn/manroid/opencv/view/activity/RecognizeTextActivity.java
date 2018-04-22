@@ -25,6 +25,7 @@ import android.widget.ImageView.ScaleType;
 import vn.manroid.opencv.R;
 import vn.manroid.opencv.utils.CharDetectOCR;
 import vn.manroid.opencv.utils.CommonUtils;
+import vn.manroid.opencv.utils.Config;
 import vn.manroid.opencv.view.custom.TouchImageView;
 
 import static vn.manroid.opencv.utils.CommonUtils.info;
@@ -35,9 +36,9 @@ import static vn.manroid.opencv.utils.CommonUtils.info;
  *
  */
 public class RecognizeTextActivity extends Activity {
+
 	static int REQUEST_IMAGE_CAPTURE = 1;
 	static ProcessImage processImg = new ProcessImage();
-
 	Button btnStartCamera;
 	Button btnExit;
 
@@ -57,11 +58,9 @@ public class RecognizeTextActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_reader);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		Bundle b = getIntent().getExtras();
-		language = b.getString("language");
-		ProcessImage.language = language;
-		ProcessImage.thresholdMin =  Integer.parseInt(b.getString("threshold"));
-		info("Language: "+ language + "   threshold: "+ ProcessImage.thresholdMin);
+
+		ProcessImage.language = Config.LANGUAGE;
+		ProcessImage.thresholdMin =  Config.THRESH_OLD_MIN; //150
 
 		btnStartCamera = (Button) findViewById(R.id.btnStartCamera);
 		btnExit = (Button) findViewById(R.id.btnExit);
