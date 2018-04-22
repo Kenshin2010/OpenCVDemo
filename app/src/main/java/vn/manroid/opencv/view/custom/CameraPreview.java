@@ -1,4 +1,4 @@
-package vn.manroid.opencv.view;
+package vn.manroid.opencv.view.custom;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -27,7 +27,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
-import vn.manroid.opencv.AndroidCamera;
+import vn.manroid.opencv.view.activity.AndroidCamera;
 
 import static vn.manroid.opencv.utils.CommonUtils.info;
 

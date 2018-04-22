@@ -1,4 +1,4 @@
-package vn.manroid.opencv;
+package vn.manroid.opencv.view.activity;
 
 import android.graphics.Bitmap;
 import android.util.Log;

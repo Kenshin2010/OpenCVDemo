@@ -1,4 +1,4 @@
-package vn.manroid.opencv;
+package vn.manroid.opencv.view.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,9 +22,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView.ScaleType;
 
+import vn.manroid.opencv.R;
 import vn.manroid.opencv.utils.CharDetectOCR;
 import vn.manroid.opencv.utils.CommonUtils;
-import vn.manroid.opencv.view.TouchImageView;
+import vn.manroid.opencv.view.custom.TouchImageView;
 
 import static vn.manroid.opencv.utils.CommonUtils.info;
 

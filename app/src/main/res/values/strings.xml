@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Recognize Text</string>
+    <string name="app_name">Card Scanner[OCR]</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Start</string>
     <string name="title_activity_recognize">Recognize Text</string>
@@ -11,10 +11,14 @@
     <string name="text_btn_take_pic">Take Picture</string>
     <string name="text_hint_result">Result</string>
     <string name="text_lb_select_language">Select Options</string>
+    <string name="card_scan">CARD SCANNER</string>
+    <string name="des">Camera to PDF scanner, editor to scan picture to PDF</string>
+    <string name="start">START</string>
+    <string name="policy"><u>By proceeding, you agree with Privacy Policy</u></string>
     <string-array name="language_array">
         <item>English</item>
     </string-array>
-<string-array name="threshold_array">
+    <string-array name="threshold_array">
         <item>85</item>
         <item>100</item>
         <item>125</item>

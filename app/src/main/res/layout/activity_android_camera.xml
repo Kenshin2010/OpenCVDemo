@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    tools:context="vn.manroid.opencv.AndroidCamera" >
+    tools:context="vn.manroid.opencv.view.activity.AndroidCamera" >
 
-    <vn.manroid.opencv.view.CameraSurfaceView
+    <vn.manroid.opencv.view.custom.CameraSurfaceView
         android:id="@+id/camerapreview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

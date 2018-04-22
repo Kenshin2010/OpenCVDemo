@@ -1,4 +1,4 @@
-package vn.manroid.opencv.view;
+package vn.manroid.opencv.view.custom;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 
-import vn.manroid.opencv.AndroidCamera;
+import vn.manroid.opencv.view.activity.AndroidCamera;
 
 
 public class CameraSurfaceView extends SurfaceView {

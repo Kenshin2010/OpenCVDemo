@@ -1,4 +1,4 @@
-package vn.manroid.opencv;
+package vn.manroid.opencv.view.activity;
 
 import android.Manifest;
 import android.app.Activity;
@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import vn.manroid.opencv.R;
 import vn.manroid.opencv.utils.CommonUtils;
 
 /**

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vn.manroid.opencv"
     android:versionCode="1"
-    android:versionName="1.1" >
+    android:versionName="1.1">
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -27,16 +27,18 @@
         android:name="android.hardware.camera.front.autofocus"
         android:required="false" />
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_text_scanner"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         <activity
-            android:name="vn.manroid.opencv.LoginActivity"
+            android:name=".view.activity.StartActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,13 +46,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="vn.manroid.opencv.AndroidCamera"
-            android:label="@string/title_activity_recognize" >
-        </activity>
+            android:name=".view.activity.AndroidCamera"
+            android:label="@string/title_activity_recognize"></activity>
         <activity
-            android:name="vn.manroid.opencv.RecognizeTextActivity"
-            android:label="@string/title_activity_recognize" >
-        </activity>
+            android:name=".view.activity.RecognizeTextActivity"
+            android:label="@string/title_activity_recognize"></activity>
+        <activity android:name=".view.activity.LoginActivity"></activity>
     </application>
 
 </manifest>

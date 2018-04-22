@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_dark"
-    tools:context="vn.manroid.opencv.RecognizeTextActivity" >
+    tools:context="vn.manroid.opencv.view.activity.RecognizeTextActivity" >
 
-    <vn.manroid.opencv.view.TouchImageView
+    <vn.manroid.opencv.view.custom.TouchImageView
         android:id="@+id/grid_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
