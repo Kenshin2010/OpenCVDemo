@@ -22,8 +22,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView.ScaleType;
 
-import com.compa.readerocr.R;
-
 import vn.manroid.opencv.utils.CharDetectOCR;
 import vn.manroid.opencv.utils.CommonUtils;
 import vn.manroid.opencv.view.TouchImageView;
