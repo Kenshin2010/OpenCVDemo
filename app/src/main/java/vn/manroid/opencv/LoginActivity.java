@@ -16,9 +16,6 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.Spinner;
-
-import com.compa.readerocr.R;
-
 import vn.manroid.opencv.utils.CommonUtils;
 
 /**

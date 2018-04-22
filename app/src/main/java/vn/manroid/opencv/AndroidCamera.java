@@ -14,8 +14,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-import com.compa.readerocr.R;
-
 import vn.manroid.opencv.view.CameraPreview;
 import vn.manroid.opencv.view.CameraSurfaceView;
 
