@@ -11,7 +11,7 @@ import java.io.File;
  *
  */
 public class CommonUtils {
-	public static String TAG = "COMPA";
+	public static String TAG = "SCANNER_CARD";
 	public static String EXAM_CFG = "exam.txt";
 	public static String REGEX_QUESTION_ANSWER = ":|=";
 	public static String REGEX_QUESTION = "\\.|,";

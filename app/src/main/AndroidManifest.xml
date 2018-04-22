@@ -48,10 +48,6 @@
         <activity
             android:name=".view.activity.AndroidCamera"
             android:label="@string/title_activity_recognize"></activity>
-        <activity
-            android:name=".view.activity.RecognizeTextActivity"
-            android:label="@string/title_activity_recognize"></activity>
-        <activity android:name=".view.activity.LoginActivity"></activity>
     </application>
 
 </manifest>
