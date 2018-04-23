@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.AndroidCamera"
+            android:name=".view.activity.AndroidCameraActivity"
             android:label="@string/title_activity_recognize"></activity>
     </application>
 

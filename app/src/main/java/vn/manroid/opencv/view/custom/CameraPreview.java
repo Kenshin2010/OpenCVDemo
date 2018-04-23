@@ -1,11 +1,7 @@
 package vn.manroid.opencv.view.custom;
 
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.ImageFormat;
-import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.hardware.Camera;
@@ -18,7 +14,6 @@ import android.net.Uri;
 import android.util.Log;
 import android.view.Display;
 import android.view.SurfaceHolder;
-import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -27,7 +22,7 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
-import vn.manroid.opencv.view.activity.AndroidCamera;
+import vn.manroid.opencv.view.activity.AndroidCameraActivity;
 
 import static vn.manroid.opencv.utils.CommonUtils.info;
 
@@ -37,7 +32,7 @@ public class CameraPreview implements SurfaceHolder.Callback {
 	Camera camera;
 	CameraSurfaceView cameraSurfaceView;
 	SurfaceHolder surfaceHolder;
-	AndroidCamera mainActivity;
+	AndroidCameraActivity mainActivity;
 	boolean previewing = false;
 
 	DrawingView drawingView;
@@ -76,23 +71,23 @@ public class CameraPreview implements SurfaceHolder.Callback {
 
 	/** Called when the activity is first created. */
 
-	public CameraPreview(AndroidCamera androidCamera, CameraSurfaceView cameraSurfaceView) {
+	public CameraPreview(AndroidCameraActivity androidCameraActivity, CameraSurfaceView cameraSurfaceView) {
 		info("Create CameraPreview2");
-		Display display = androidCamera.getWindowManager().getDefaultDisplay();
+		Display display = androidCameraActivity.getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
 		previewWidth = size.x;
 		previewHeight = size.y;
 		info("Actual preview size: " + previewWidth + ":" + previewHeight);
 
-		this.mainActivity = androidCamera;
+		this.mainActivity = androidCameraActivity;
 		this.cameraSurfaceView = cameraSurfaceView;
 		surfaceHolder = cameraSurfaceView.getHolder();
 		surfaceHolder.addCallback(this);
 
 		// surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
-		drawingView = new DrawingView(androidCamera);
+		drawingView = new DrawingView(androidCameraActivity);
 		LayoutParams layoutParamsDrawing = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 		mainActivity.addContentView(drawingView, layoutParamsDrawing);
 

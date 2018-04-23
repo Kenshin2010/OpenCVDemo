@@ -23,7 +23,7 @@ import vn.manroid.opencv.view.custom.CameraSurfaceView;
  * @author Sea
  *
  */
-public class AndroidCamera extends Activity {
+public class AndroidCameraActivity extends Activity {
 	static int REQUEST_IMAGE_CAPTURE = 1;
 	public CameraPreview camPreview;
 	CameraSurfaceView cameraSurfaceView;
@@ -40,7 +40,7 @@ public class AndroidCamera extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		Log.i("COMPA", "on create AndroidCamera");
+		Log.i("COMPA", "on create AndroidCameraActivity");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_android_camera);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
