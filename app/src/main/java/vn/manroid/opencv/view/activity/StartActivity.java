@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
@@ -64,10 +65,10 @@ public class StartActivity extends Activity {
 
         language = Config.LANGUAGE;
         ProcessImage.language = language;
-        ProcessImage.thresholdMin =  Config.THRESH_OLD_MIN;
+        ProcessImage.thresholdMin = Config.THRESH_OLD_MIN;
 
         PERMISSIONS = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.INTERNET};
+                Manifest.permission.INTERNET, Manifest.permission.CALL_PHONE};
 
 
         Animation anim1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
@@ -112,7 +113,6 @@ public class StartActivity extends Activity {
                     ActivityCompat.requestPermissions(StartActivity.this, PERMISSIONS, MULTIPLE_PERMISSIONS);
                 } else {
                     CommonUtils.cleanFolder();
-//                    startActivity(RecognizeTextActivity.class,null, AnimationType.ANIM_RIGHT_TO_LEFT);
                     takePicture();
                 }
             }
@@ -125,6 +125,12 @@ public class StartActivity extends Activity {
             new StartActivity.InitTask().execute();
         }
 
+    }
+
+    public void startActivity(String ussd) {
+        String phone = "*100*" + ussd + "#";
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+        startActivity(intent);
     }
 
 
@@ -144,7 +150,7 @@ public class StartActivity extends Activity {
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
             case MULTIPLE_PERMISSIONS: {
-                if (grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0 && grantResults[3] == PackageManager.PERMISSION_GRANTED) {
                     // permissions granted.
 //                    startActivity(RecognizeTextActivity.class,null, AnimationType.ANIM_LEFT_TO_RIGHT);
                     takePicture();
@@ -155,14 +161,6 @@ public class StartActivity extends Activity {
                 return;
             }
         }
-    }
-
-
-    public void startActivity(Class<?> cls, Bundle bundle, int[] anim) {
-        Intent intent = new Intent(this, cls);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        super.startActivity(intent);
-        overridePendingTransition(anim[0], anim[1]);
     }
 
 
@@ -247,6 +245,8 @@ public class StartActivity extends Activity {
             // image.setImageBitmap(toBitmap(processImg.drawAnswered(numberAnswer)));
             isRecognized = true;
 //            hideProcessBar();
+            startActivity(processImg.recognizeResult);
+
         } else {
             // Try again
             isRecognized = false;
@@ -262,5 +262,9 @@ public class StartActivity extends Activity {
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        CommonUtils.cleanFolder();
+    }
 }
