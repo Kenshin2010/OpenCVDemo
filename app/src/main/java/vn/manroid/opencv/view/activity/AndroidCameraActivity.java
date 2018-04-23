@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -70,6 +71,11 @@ public class AndroidCameraActivity extends Activity {
 			}
 		});
 
+		//set brightness for camera
+		WindowManager.LayoutParams lp = getWindow().getAttributes();
+		float newBrightness = (float) 50;
+		lp.screenBrightness = newBrightness / (float) 255;
+		getWindow().setAttributes(lp);
 	}
 
 	public void callProcessImage(String output, int top, int bot, int right, int left) {

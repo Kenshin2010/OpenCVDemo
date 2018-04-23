@@ -309,7 +309,7 @@ public class CameraPreview implements SurfaceHolder.Callback {
 
         Camera.Size result = null;
         if (true) {
-            return parameters.getSupportedPreviewSizes().get(0);
+            return parameters.getSupportedPreviewSizes().get(15);
         }
         for (Camera.Size size : parameters.getSupportedPreviewSizes()) {
             info("Size " + size.width + ":" + size.height);
