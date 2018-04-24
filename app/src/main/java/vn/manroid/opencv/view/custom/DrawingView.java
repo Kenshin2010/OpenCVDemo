@@ -30,7 +30,7 @@ public class DrawingView extends View {
     protected void onDraw(Canvas canvas) {
         if (lstRectArea != null && lstRectArea.size() > 0) {
             for (Rect rect : lstRectArea) {
-                canvas.drawRect(rect.left * 1.0F, rect.top * 1.0F, rect.right * 1.0F, rect.bottom * 1.0F,
+                canvas.drawRect((rect.left * 1.0F) + 100, rect.top * 1.0F, (rect.right * 1.0F) - 100, rect.bottom * 1.0F,
                         drawingPaint);
             }
         }

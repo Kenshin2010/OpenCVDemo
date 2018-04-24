@@ -373,7 +373,9 @@ public class CameraPreview implements SurfaceHolder.Callback {
 
         boxH = boxW = 10;//(int) (5 * avrg);
         int halfBox = boxW / 2;
-        marginLeftRight = avrg / 2;
+        //=============================================
+        //marginLeftRight = avrg / 2;
+        marginLeftRight = avrg * 5;
         info("Avrg: " + avrg + "  boxH=boxW: " + boxH + "  marginLR: " + marginLeftRight);
 
         int beginTop = startX;
