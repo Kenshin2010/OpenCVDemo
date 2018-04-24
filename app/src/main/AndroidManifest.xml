@@ -47,8 +47,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activity.AndroidCamera"
-            android:label="@string/title_activity_recognize"></activity>
+            android:name=".view.activity.AndroidCameraActivity"
+            android:label="@string/title_activity_recognize"/>
+
+        <activity android:name=".test.CameraActivity"/>
+
     </application>
 
 </manifest>

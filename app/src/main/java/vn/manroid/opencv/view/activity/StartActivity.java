@@ -15,25 +15,22 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.QuickContactBadge;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import vn.manroid.opencv.R;
-import vn.manroid.opencv.utils.AnimationType;
 import vn.manroid.opencv.utils.CharDetectOCR;
 import vn.manroid.opencv.utils.CommonUtils;
 import vn.manroid.opencv.utils.Config;
+import vn.manroid.opencv.view.common.ProcessImage;
 
 import static vn.manroid.opencv.utils.CommonUtils.info;
 
@@ -196,7 +193,7 @@ public class StartActivity extends Activity {
 
 
     private void takePicture() {
-        Intent takePicIntent = new Intent(StartActivity.this, AndroidCamera.class);
+        Intent takePicIntent = new Intent(StartActivity.this, AndroidCameraActivity.class);
         lastFileName = CommonUtils.APP_PATH + "capture" + System.currentTimeMillis() + ".jpg";
         takePicIntent.putExtra("output", lastFileName);
         info(lastFileName);

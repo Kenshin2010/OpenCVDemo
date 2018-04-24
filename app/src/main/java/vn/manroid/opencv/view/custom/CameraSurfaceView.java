@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 
-import vn.manroid.opencv.view.activity.AndroidCamera;
+import vn.manroid.opencv.view.activity.AndroidCameraActivity;
 
 
 public class CameraSurfaceView extends SurfaceView {
@@ -40,7 +40,7 @@ public class CameraSurfaceView extends SurfaceView {
 			Rect touchRect = new Rect((int) (x - touchMajor / 2), (int) (y - touchMinor / 2),
 					(int) (x + touchMajor / 2), (int) (y + touchMinor / 2));
 
-			((AndroidCamera) getContext()).camPreview.touchFocus(touchRect);
+			((AndroidCameraActivity) getContext()).camPreview.touchFocus(touchRect);
 		}
 
 		return true;
