@@ -308,8 +308,10 @@ public class CameraPreview implements SurfaceHolder.Callback {
     private Camera.Size getBestPreviewSize(int width, int height, Camera.Parameters parameters) {
 
         Camera.Size result = null;
+
         if (true) {
-            return parameters.getSupportedPreviewSizes().get(15);
+            int maxSetting = parameters.getSupportedPreviewSizes().size() - 1;
+            return parameters.getSupportedPreviewSizes().get(maxSetting);
         }
         for (Camera.Size size : parameters.getSupportedPreviewSizes()) {
             info("Size " + size.width + ":" + size.height);
